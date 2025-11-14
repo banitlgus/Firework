@@ -7,10 +7,13 @@ function setup() {
 
 function draw() {
   background(51);
-  system.addParticle();
-  system.run();
+  // system.addParticle();
+  // system.run();
+  system.setPosition(createVector(mouseX, mouseY));
 
   if(mouseIsPressed) {
+      system.addParticle();
+      system.run();
       let force = createVector(0, 0.05);
       system.addForce(force);
   }
