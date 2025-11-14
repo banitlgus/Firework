@@ -1,26 +1,26 @@
-let systems = [];
+let fireworks = [];
 
 function setup() {
-  createCanvas(720, 400);
+  createCanvas(windowWidth, 400);
   noStroke();
 }
 
 function draw() {
-  background(51);
+  background(0);
 
-  for (let s of systems){
-    s.addParticle();
-    s.run();
+  for (let f of fireworks){
+    f.addParticle();
+    f.run();
 
     if (keyIsPressed) {
     let force = createVector(0, 0.05)
-    s.addForce(force);
+    f.addForce(force);
     }
   }
 }
 
 function mouseClicked() {
-  let s = new ParticleSystem(createVector(width/2, 50));
-  systems.push(s);
-  s.setPosition(createVector(mouseX, mouseY));
+  let f = new ParticleSystem(createVector(width/2, 50));
+  fireworks.push(f);
+  f.setPosition(createVector(mouseX, mouseY));
 }
