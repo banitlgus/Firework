@@ -1,6 +1,6 @@
 class ParticleSystem {
     constructor(position) {
-        this.origin = position;
+        this.origin = position.copy();
         this.particles = [];
     }
 
@@ -15,6 +15,12 @@ class ParticleSystem {
             if (p.isDead()) {
                 this.particles.splice(i, 1);
             }
+        }
+    }
+
+    addForce(aForce) {
+        for (let p of this.particles) {
+            p.addForce(aForce);
         }
     }
 }
