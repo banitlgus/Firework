@@ -3,7 +3,7 @@ class Particle {
         this.acceleration = createVector(0, 0);
         this.velocity = createVector(random(-1, 1), random(-1, 1));
         this.position = position.copy();
-        this.lifespan = 500;
+        this.lifespan = 300;
     }
 
     run() {
@@ -23,7 +23,7 @@ class Particle {
     }
 
     display() {
-        fill(0, random(0,200), random(100,255), this.lifespan);
+        fill(random(100,255), random(100,255), random(100,255), this.lifespan);
         ellipse(this.position.x, this.position.y, random(1,10));
     }
 
