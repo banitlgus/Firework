@@ -11,6 +11,11 @@ function draw() {
   for (let s of systems){
     s.addParticle();
     s.run();
+
+    if (keyIsPressed) {
+    let force = createVector(0, 0.05)
+    s.addForce(force);
+    }
   }
 }
 
