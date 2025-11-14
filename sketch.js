@@ -9,6 +9,9 @@ function draw() {
   background(51);
   system.addParticle();
   system.run();
-  let force = createVector(0, 0.05);
-  system.addForce(force);
+
+  if(mouseIsPressed) {
+      let force = createVector(0, 0.05);
+      system.addForce(force);
+  }
 }
